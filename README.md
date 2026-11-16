@@ -95,8 +95,9 @@ greet("大肥鱼")  # 'Hello, 大肥鱼!'
 ```
 
 ## 许可证
+
+
+[MIT](LICENSE) © 2026 boydreamsu-arch
 ## 我的学习笔记
 
 - 2026-11-16：第一次完整走通 add → commit → push 流程
-
-[MIT](LICENSE) © 2026 boydreamsu-arch
