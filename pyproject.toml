@@ -7,7 +7,7 @@ name = "maomaoyu-starter"
 version = "0.1.0"
 description = "一个最小可用、结构规范的 Python 项目骨架。"
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 license = { text = "MIT" }
 authors = [
     { name = "boydreamsu-arch", email = "272725553+boydreamsu-arch@users.noreply.github.com" },
@@ -19,6 +19,10 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
     "Operating System :: OS Independent",
 ]
 
@@ -44,13 +48,16 @@ addopts = "-v"
 
 [tool.ruff]
 line-length = 100
-target-version = "py39"
+target-version = "py310"
 src = ["src", "tests"]
 
 [tool.ruff.lint]
 select = ["E", "F", "W", "I", "N", "UP", "B"]
 
 [tool.mypy]
-python_version = "3.9"
+python_version = "3.10"
 strict = true
 files = ["src"]
+# greet() 在运行时对非字符串入参做防御性校验，该分支静态上不可达，
+# 关闭 unreachable 告警以免误报（严格模式的其余开关全部保留）。
+warn_unreachable = false

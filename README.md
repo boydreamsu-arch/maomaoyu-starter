@@ -33,7 +33,7 @@ maomaoyu-starter/
 
 ## 快速开始
 
-需要 **Python 3.9+**。
+需要 **Python 3.10+**。
 
 ```bash
 # 1. 创建虚拟环境
@@ -90,8 +90,8 @@ mypy                # 严格类型检查
 ```python
 from maomaoyu_starter import greet
 
-greet()              # 'Hello, World!'
-greet("大肥鱼")       # 'Hello, 大肥鱼!'
+greet()  # 'Hello, World!'
+greet("大肥鱼")  # 'Hello, 大肥鱼!'
 ```
 
 ## 许可证
