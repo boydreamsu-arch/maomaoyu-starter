@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "maomaoyu-starter"
+version = "0.1.0"
+description = "一个最小可用、结构规范的 Python 项目骨架。"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [
+    { name = "boydreamsu-arch", email = "272725553+boydreamsu-arch@users.noreply.github.com" },
+]
+keywords = ["starter", "template", "python"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/boydreamsu-arch/maomaoyu-starter"
+"Bug Reports" = "https://github.com/boydreamsu-arch/maomaoyu-starter/issues"
+
+[project.scripts]
+maomaoyu = "maomaoyu_starter.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+maomaoyu_starter = ["py.typed"]
+
+# ---- 工具配置 ----
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-v"
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP", "B"]
+
+[tool.mypy]
+python_version = "3.9"
+strict = true
+files = ["src"]
